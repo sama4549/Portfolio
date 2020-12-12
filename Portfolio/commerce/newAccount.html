@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> <!--Linked Fonts-->
+    <link rel="stylesheet" href="./css/newaccount.css">
+    <script src="./js/newAccount.js" defer></script>
+    <script src="https://kit.fontawesome.com/56f5ca89c0.js" crossorigin="anonymous"></script> <!--Linked Shopping Cart Symbol-->
+</head>
+<header>
+    <nav>
+        <div class="title">
+            <h1><a href="./index.html" class="nav-title">Travel Essentials</a></h1>
+        </div>
+        <div class="navigation">
+            <p class="nav-item"> <a href="./aboutUs.html" class="nav-link">About Us</a></p>
+            <p class="nav-item"> <a href="./ourProducts.html" class="nav-link">Our Products</a></p>
+            <p class="nav-item"> <a href="./contactUs.html" class="nav-link">Contact Us</a></p>
+            <p class="nav-item nav-log-in-item"><a href="./login.html" class="nav-log-in nav-link">Log In</a></p>
+            <a href="./cart.html" id="shopping-cart-link"><p class="nav-item"><i class="fas fa-shopping-cart nav-link"></i> </p></a><span class="please-log-in">Please Log in First!</span>
+        </div>
+        <div class="cart">
+
+        </div>
+    </nav>
+</header>
+<body>
+    <h1 class="new-account-title">Create a New Account</h1>
+    <div class="new-account-container">
+        <div class="first-name-container input">
+            <label for="first-name">Name</label>
+            <input type="text" name="first-name" id="first-name">
+        </div>
+        <div class="last-name-container input">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name">
+        </div>
+        <div class="email-container input">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div class="username-container input">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="password-container input">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="confirm-password-container input">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" name="confirm-password" id="confirm-password">
+        </div>
+    </div>
+    <button class="new-account-button">Create New Account</button>
+<footer>
+    <p>Travel Essentials, Inc 2020</p>
+</footer>
+</html>

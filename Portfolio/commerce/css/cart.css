@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 98.9vw;
+}
+
+body {
+    background-color: darkslategrey;
+}
+
+.title {
+    font-family: 'Architects Daughter', cursive;
+    margin-left: 2%;
+    font-size: 24px;
+    color: burlywood;
+    width: 40vw;
+}
+
+nav {
+    width: 100vw;
+    background-color: darkslategrey;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50vw;
+    text-align: center;
+    flex-shrink: 0.5;
+    align-items: center;
+}
+
+.nav-title {
+    color: burlywood;
+    text-decoration: none;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 5%;
+    color: whitesmoke;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.nav-log-in {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navigation p:hover {
+    cursor: pointer;
+    color: burlywood;
+    background-color: darkslategrey;
+}
+
+.please-log-in {
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transform: scale(0);
+    position: absolute;
+    right: 1%;
+    margin-top: 5%;
+    background-color: rgba(233, 150, 122, 0.829);
+    color: rgba(255, 238, 0, 0.788);
+    border-radius: 5%;
+    z-index: 2;
+    width: 100px;
+}
+
+.product-title {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 45px;
+    color: burlywood;
+    margin: 10vh auto;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    margin: 0 auto;
+    font-family: 'Architects Daughter', cursive;
+    color: burlywood;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-header {
+    font-size: 35px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    border-bottom: solid burlywood 5px;
+}
+
+.grid-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    font-size: 30px;
+    grid-column-gap: 50px;   
+    align-items: center;
+}
+
+.grid-total {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    font-size: 30px;
+    grid-column-gap: 50px;
+    margin-bottom: 5%;
+}
+
+.remove-symbol{
+    font-size: 50px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.remove-symbol:hover {
+    cursor: pointer;
+}
+
+footer {
+    background-color: burlywood;
+    height: 40px;
+    display: grid;
+    align-items: center;
+    width: 100vw;
+    height: 40px;
+}
+
+footer p {
+    margin-left: 2%;
+    color: darkslategrey;
+}

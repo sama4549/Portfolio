@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> <!--Linked Fonts-->
+    <link rel="stylesheet" href="./css/productsPages.css">
+    <script src="./js/inventory.js" defer></script>
+    <script src="https://kit.fontawesome.com/56f5ca89c0.js" crossorigin="anonymous"></script> <!--Linked Shopping Cart Symbol-->
+</head>
+<div class="overlay">
+    <h1>Add item(s) to cart?</h1>
+    <div class="overlay-button-container">
+        <br>
+        <button class="overlay-button-yes">Yes</button>
+        <button class="overlay-button-no">No</button>
+    </div>
+</div>
+<div class="overlay-success">
+    <h1>Item(s) successfully added!</h1>
+    <br>
+    <button class="overlay-button-ok">OK</button>
+</div>
+<body>
+    <header>
+        <nav>
+            <div class="title">
+                <h1><a href="./index.html" class="nav-title">Travel Essentials</a></h1>
+            </div>
+            <div class="navigation">
+                <p class="nav-item"> <a href="./aboutUs.html" class="nav-link">About Us</a></p>
+                <p class="nav-item"> <a href="./ourProducts.html" class="nav-link">Our Products</a></p>
+                <p class="nav-item"> <a href="./contactUs.html" class="nav-link">Contact Us</a></p>
+                <p class="nav-item nav-log-in-item"><a href="./login.html" class="nav-log-in nav-link">Log In</a></p>
+                <a href="./cart.html" id="shopping-cart-link"><p class="nav-item nav-link"><i class="fas fa-shopping-cart"></i> </p></a><span class="please-log-in">Please Log in First!</span>
+            </div>
+            <div class="cart">
+
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <h1 class="product-title">Transportation</h1>
+        <div class="products-grid-container">
+            <div class="products-grid-subcontainer">
+                <div class="products-grid-item-left">
+                    <p class="item-name">Neck Rest</p>
+                    <img src="./images/products-transportation/neck-rest.jpg" alt="Neck Wrest" class="item-image">
+                </div>
+                <div class="products-grid-item-right">
+                    <p class="item-description">Made up of the softest and most comfortable memory foam, the neck rests ensures the ability to sleep well without your head falling to its side and jerking you awake. It also ensures that you lessen or eliminate any soreness or stiffness you might experience while sleeping on the move.</p>
+                    <br>
+                    <label for="quantity">$9.99</label>
+                    <input type="number" min="0" max="25" name="quantity" class="quantity" id="quantity">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="products-grid-subcontainer">
+                <div class="products-grid-item-left">
+                    <p class="item-name">Sleep Mask</p>
+                    <img src="./images/products-transportation/sleep-mask.jpg" alt="Sleep Mask" class="item-image">
+                </div>
+                <div class="products-grid-item-right">
+                    <p class="item-description">Gurantees a putch black sleeping experience without a hint of light reaching your eyes. Sleep well while on a plane, bus, or car without the disturbing light keeping you awake. Avilable in multiple colors.</p>
+                    <br>
+                    <label for="quantity">$9.99</label>
+                    <input type="number" min="0" max="25" name="quantity" class="quantity" id="quantity">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="products-grid-subcontainer">
+                <div class="products-grid-item-left">
+                    <p class="item-name">Ear Plugs</p>
+                    <img src="./images/products-transportation/noise-cancel.jpeg" alt="Ear Plugs" class="item-image">
+                </div>
+                <div class="products-grid-item-right">
+                    <p class="item-description">Drown out the screams of crying babies on the airplane, the annoying music in a car ride, or the chatter of the people on the bus with you. It is strong enough to eliminate the casual sound of your environment, but not that of a loud sound. You wouldn't want to miss out on an amergency would you?</p>
+                    <br>
+                    <label for="quantity">$4.99</label>
+                    <input type="number" min="0" max="25" name="quantity" class="quantity" id="quantity">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Travel Essentials, Inc 2020</p>
+    </footer>
+</body>
+</html>
