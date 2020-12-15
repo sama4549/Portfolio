@@ -5,6 +5,7 @@ const newAccountButton = document.querySelector('.new-account-button');
 const navLink = document.querySelectorAll('.nav-link');
 const logInButton = document.querySelector('.log-in-button');
 const navLoginItem = document.querySelector('.nav-log-in-item');
+const loginFailed = document.querySelector('.login-failed');
 
 //VARIABLES//
 let loggedIn;
@@ -70,6 +71,8 @@ function checkInputs() {
         applyLogin(username);
     } else {
         console.log('login failed.');
+        loginFailed.style.transform = 'scale(1)';
+        setTimeout(function() {loginFailed.style.transform = 'scale(0)'} , 3000);
     }
 }
 

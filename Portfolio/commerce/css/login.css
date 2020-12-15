@@ -87,13 +87,23 @@ nav {
     color: burlywood;
 }
 
+.login-failed {
+    color: red;
+    font-size: 22px;
+    text-align: center;
+    transform: scale(0);
+    transition: ease-in-out;
+    margin-top: 10px;
+    transition-duration: 1s;
+}
+
 .log-in-page {
     margin: 5vh auto 0;
     padding-top: 2%;
     padding-bottom: 2%;
     width: 35vw;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 8vh;
     line-height: 3;
     font-size: 30px;
     font-family: 'Architects Daughter', cursive;
