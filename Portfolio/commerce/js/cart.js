@@ -5,6 +5,7 @@ const pleaseLogInMessage = document.querySelector('.please-log-in');
 const navLink = document.querySelectorAll('.nav-link');
 const navLoginItem = document.querySelector('.nav-log-in-item');
 const gridItems = document.querySelector('.grid-items');
+const cartSize = document.querySelector('.cart-size');
 let gridTotal = document.querySelector('.grid-total');
 
 //VARIABLES//
@@ -16,6 +17,7 @@ let itemCounter = 0;
 let cartItemArray = [];                                  //These variables may be obsolete. Delete once finished.
 let cartItemCostArray = [];
 let tempCart = [];
+let numberOfCartItems = JSON.parse(localStorage.getItem('numberOfCartItems'));
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 let loginUsers = JSON.parse(localStorage.getItem('savedLogInInfo'));
 let currentUserInfo = JSON.parse(localStorage.getItem('Current User Info'));
@@ -69,6 +71,7 @@ function obtainLocalData() {                                   //Obtains all loc
 function checkForLoginStatus() {                               //Checks if user is logged in
     if (loggedIn == true) {
         navLoginItem.innerHTML = currentUser;
+        cartSize.innerHTML = `(${numberOfCartItems})`;
 
     } else if (loggedIn == false) {
         navLoginItem.innerHTML = 'Log In';
@@ -115,6 +118,10 @@ function loadCartData() {
             gridItems.removeChild(itemEelement);
             gridItems.removeChild(costElement);
             itemCounter--;
+
+            ///////HERE ADD REMOVE ITEM COUNTER FEATURE///////
+
+
             console.log(`Item #${itemCounter}`);
             cartItemArray = [];
             cartItemCostArray = [];
@@ -210,5 +217,10 @@ function checkForLocalData() {
     if (loggedIn == null) {
         loggedIn = false;
         localStorage.setItem('loginStatus', JSON.stringify(loggedIn));
+    }
+
+    if (numberOfCartItems == null) {
+        numberOfCartItems = 0;
+        localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
     }
 }

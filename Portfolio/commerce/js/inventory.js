@@ -13,11 +13,13 @@ const overlayButtonYes = document.querySelector('.overlay-button-yes');
 const overlayButtonNo = document.querySelector('.overlay-button-no');
 const overlayButtonOk = document.querySelector('.overlay-button-ok');
 const main = document.querySelector('.main');
+const cartSize = document.querySelector('.cart-size');
 
 //VARIABLES//
 let counter;
 let finalCount;
 let loggedIn;
+let numberOfCartItems = JSON.parse(localStorage.getItem('numberOfCartItems'));
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 let inventoryTransportation = [];
 let inventoryElectronics = [];
@@ -81,6 +83,7 @@ function obtainLocalData() {                                   //Obtains all loc
 function checkForLoginStatus() {                               //Checks if user is logged in
     if (loggedIn == true) {
         navLoginItem.innerHTML = currentUser;
+        cartSize.innerHTML = `(${numberOfCartItems})`;
 
     } else if (loggedIn == false) {
         navLoginItem.innerHTML = 'Log In';
@@ -147,6 +150,7 @@ function transportation(ev) {
             inventoryTransportation[i].quantity = inventoryTransportation[i].quantity - Number(quantityToAdd[i].value);
             console.log(`Remaining in Inventory: ${inventoryTransportation[i].quantity}`);
             console.log(`Quantity to add: ${quantityToAdd[i].value}`);
+            numberOfCartItems = Number(numberOfCartItems) + Number(quantityToAdd[i].value);
             currentUserInfo.cart = Number(currentUserInfo.cart) + Number(inventoryTransportation[i].cost * quantityToAdd[i].value);
             let newCartItem = {
                 item: `${inventoryTransportation[i].item} x ${quantityToAdd[i].value}`,
@@ -157,7 +161,7 @@ function transportation(ev) {
             main.style.opacity = '1';
             ///////////////////////////APPLY TO LOCAL STORAGE///////////////////////////////
             localStorage.setItem('Inventory-Transportation', JSON.stringify(inventoryTransportation));
-
+            localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
             ///////////////////////////RESET PAGE////////////////////////////////////////////
             overlaySuccess.style.transform = 'scale(1)';
             overlayButtonOk.addEventListener('click', () => {
@@ -185,6 +189,7 @@ function electronics(ev) {
             inventoryElectronics[i].quantity = inventoryElectronics[i].quantity - Number(quantityToAdd[i].value);
             console.log(`Remaining in Inventory: ${inventoryElectronics[i].quantity}`);
             console.log(`Quantity to add: ${quantityToAdd[i].value}`);
+            numberOfCartItems = Number(numberOfCartItems) + Number(quantityToAdd[i].value);
             currentUserInfo.cart = Number(currentUserInfo.cart) + Number(inventoryElectronics[i].cost * quantityToAdd[i].value);
             let newCartItem = {
                 item: `${inventoryElectronics[i].item} x ${quantityToAdd[i].value}`,
@@ -195,7 +200,7 @@ function electronics(ev) {
             main.style.opacity = '1';
             ///////////////////////////APPLY TO LOCAL STORAGE///////////////////////////////
             localStorage.setItem('Inventory-Electronics', JSON.stringify(inventoryElectronics));
-
+            localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
             ///////////////////////////RESET PAGE////////////////////////////////////////////
             overlaySuccess.style.transform = 'scale(1)';
             overlayButtonOk.addEventListener('click', () => {
@@ -223,6 +228,7 @@ function clothing(ev) {
             inventoryClothing[i].quantity = inventoryClothing[i].quantity - Number(quantityToAdd[i].value);
             console.log(`Remaining in Inventory: ${inventoryClothing[i].quantity}`);
             console.log(`Quantity to add: ${quantityToAdd[i].value}`);
+            numberOfCartItems = Number(numberOfCartItems) + Number(quantityToAdd[i].value);
             currentUserInfo.cart = Number(currentUserInfo.cart) + Number(inventoryClothing[i].cost * quantityToAdd[i].value);
             let newCartItem = {
                 item: `${inventoryClothing[i].item} x ${quantityToAdd[i].value}`,
@@ -233,7 +239,7 @@ function clothing(ev) {
             main.style.opacity = '1';
             ///////////////////////////APPLY TO LOCAL STORAGE///////////////////////////////
             localStorage.setItem('Inventory-Clothing', JSON.stringify(inventoryClothing));
-
+            localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
             ///////////////////////////RESET PAGE////////////////////////////////////////////
             overlaySuccess.style.transform = 'scale(1)';
             overlayButtonOk.addEventListener('click', () => {
@@ -261,6 +267,7 @@ function language(ev) {
             inventoryLanguage[i].quantity = inventoryLanguage[i].quantity - Number(quantityToAdd[i].value);
             console.log(`Remaining in Inventory: ${inventoryLanguage[i].quantity}`);
             console.log(`Quantity to add: ${quantityToAdd[i].value}`);
+            numberOfCartItems = Number(numberOfCartItems) + Number(quantityToAdd[i].value);
             currentUserInfo.cart = Number(currentUserInfo.cart) + Number(inventoryLanguage[i].cost * quantityToAdd[i].value);
             let newCartItem = {
                 item: `${inventoryLanguage[i].item} x ${quantityToAdd[i].value}`,
@@ -271,7 +278,7 @@ function language(ev) {
             main.style.opacity = '1';
             ///////////////////////////APPLY TO LOCAL STORAGE///////////////////////////////
             localStorage.setItem('Inventory-Language', JSON.stringify(inventoryLanguage));
-
+            localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
             ///////////////////////////RESET PAGE////////////////////////////////////////////
             overlaySuccess.style.transform = 'scale(1)';
             overlayButtonOk.addEventListener('click', () => {
@@ -299,6 +306,7 @@ function outdoors(ev) {
             inventoryOutdoors[i].quantity = inventoryOutdoors[i].quantity - Number(quantityToAdd[i].value);
             console.log(`Remaining in Inventory: ${inventoryOutdoors[i].quantity}`);
             console.log(`Quantity to add: ${quantityToAdd[i].value}`);
+            numberOfCartItems = Number(numberOfCartItems) + Number(quantityToAdd[i].value);
             currentUserInfo.cart = Number(currentUserInfo.cart) + Number(inventoryOutdoors[i].cost * quantityToAdd[i].value);
             let newCartItem = {
                 item: `${inventoryOutdoors[i].item} x ${quantityToAdd[i].value}`,
@@ -309,7 +317,7 @@ function outdoors(ev) {
             main.style.opacity = '1';
             ///////////////////////////APPLY TO LOCAL STORAGE///////////////////////////////
             localStorage.setItem('Inventory-Outdoors', JSON.stringify(inventoryOutdoors));
-
+            localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
             ///////////////////////////RESET PAGE////////////////////////////////////////////
             overlaySuccess.style.transform = 'scale(1)';
             overlayButtonOk.addEventListener('click', () => {
@@ -337,6 +345,7 @@ function luggage(ev) {
             inventoryLuggage[i].quantity = inventoryLuggage[i].quantity - Number(quantityToAdd[i].value);
             console.log(`Remaining in Inventory: ${inventoryLuggage[i].quantity}`);
             console.log(`Quantity to add: ${quantityToAdd[i].value}`);
+            numberOfCartItems = Number(numberOfCartItems) + Number(quantityToAdd[i].value);
             currentUserInfo.cart = Number(currentUserInfo.cart) + Number(inventoryLuggage[i].cost * quantityToAdd[i].value);
             let newCartItem = {
                 item: `${inventoryLuggage[i].item} x ${quantityToAdd[i].value}`,
@@ -347,7 +356,7 @@ function luggage(ev) {
             main.style.opacity = '1';
             ///////////////////////////APPLY TO LOCAL STORAGE///////////////////////////////
             localStorage.setItem('Inventory-Luggage', JSON.stringify(inventoryLuggage));
-
+            localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
             ///////////////////////////RESET PAGE////////////////////////////////////////////
             overlaySuccess.style.transform = 'scale(1)';
             overlayButtonOk.addEventListener('click', () => {
@@ -571,5 +580,10 @@ function checkForLocalData() {
     if (loggedIn == null) {
         loggedIn = false;
         localStorage.setItem('loginStatus', JSON.stringify(loggedIn));
+    }
+
+    if (numberOfCartItems == null) {
+        numberOfCartItems = 0;
+        localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
     }
 }

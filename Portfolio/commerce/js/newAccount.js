@@ -5,6 +5,7 @@ const pleaseLogInMessage = document.querySelector('.please-log-in');
 const newAccountButton = document.querySelector('.new-account-button');
 const navLink = document.querySelectorAll('.nav-link');
 const navLoginItem = document.querySelector('.nav-log-in-item');
+const cartSize = document.querySelector('.cart-size');
 
 //ARRAY//
 
@@ -14,6 +15,7 @@ let loginInfo = [];
 const loggedIn = false;
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 let loginUsers = JSON.parse(localStorage.getItem('savedLogInInfo'));
+let numberOfCartItems = JSON.parse(localStorage.getItem('numberOfCartItems'));
 let currentUserInfo;
 
 //EVENT LISTENERS//
@@ -97,6 +99,7 @@ function createNewAccount() {                                             //Adds
 
 function loadAccounts() {                                               //Loads all of the saved data onto the array.                                                        
     loginInfo = JSON.parse(localStorage.getItem('savedLogInInfo'));
+    cartSize.innerHTML = `(${numberOfCartItems})`;
 }
 
 function checkIfArrayExists() {                                        //Checks if the account array already exists. If not, then it will create a John Doe account to start off.
@@ -144,4 +147,10 @@ function checkForLocalData() {
         loggedIn = false;
         localStorage.setItem('loginStatus', JSON.stringify(loggedIn));
     }
+
+    if (numberOfCartItems == null) {
+        numberOfCartItems = 0;
+        localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
+    }
+}
 }

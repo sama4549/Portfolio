@@ -4,12 +4,13 @@ const navShoppingCartLink = document.getElementById('shopping-cart-link');
 const pleaseLogInMessage = document.querySelector('.please-log-in');
 const logOutButton = document.getElementById('log-out-button');
 const navLoginItem = document.querySelector('.nav-log-in-item');
-
+const cartSize = document.querySelector('.cart-size');
 
 //VARIABLES
 let loggedIn;
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 let loginUsers = JSON.parse(localStorage.getItem('savedLogInInfo'));
+let numberOfCartItems = JSON.parse(localStorage.getItem('numberOfCartItems'));
 let currentUserInfo;
 
 //EVENT LISTENERS
@@ -46,6 +47,7 @@ function obtainLocalData() {                                   //Obtains all loc
 function checkForLoginStatus() {                               //Checks if user is logged in
     if (loggedIn == true) {
         navLoginItem.innerHTML = currentUser;
+        cartSize.innerHTML = `(${numberOfCartItems})`;
     } else if (loggedIn == false) {
         navLoginItem.innerHTML = 'Log In';
     }
@@ -99,5 +101,10 @@ function checkForLocalData() {
     if (loggedIn == null) {
         loggedIn = false;
         localStorage.setItem('loginStatus', JSON.stringify(loggedIn));
+    }
+
+    if (numberOfCartItems == null) {
+        numberOfCartItems = 0;
+        localStorage.setItem('numberOfCartItems', JSON.stringify(numberOfCartItems));
     }
 }
